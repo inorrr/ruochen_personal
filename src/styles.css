@@ -58,6 +58,13 @@ a {
   gap: 1rem;
 }
 
+.nav-group,
+.contact-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .brand,
 .eyebrow,
 .section-label,
@@ -81,6 +88,30 @@ a {
 
 .hero-content {
   padding: 6rem 0 5rem;
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-photo-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-photo {
+  width: min(100%, 320px);
+  aspect-ratio: 1 / 1.08;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid var(--line);
 }
 
 .eyebrow,
@@ -145,6 +176,33 @@ h3 {
     background-color 160ms ease,
     border-color 160ms ease,
     color 160ms ease;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+  transition:
+    border-color 160ms ease,
+    color 160ms ease,
+    background-color 160ms ease;
+}
+
+.social-link:hover {
+  border-color: var(--accent-strong);
+  color: var(--accent-soft);
+  background: rgba(120, 240, 161, 0.06);
+}
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
 }
 
 .button-primary,
@@ -222,9 +280,18 @@ h3 {
 }
 
 @media (max-width: 800px) {
+  .hero-layout,
   .two-column,
   .focus-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-photo-wrap {
+    justify-content: flex-start;
+  }
+
+  .hero-photo {
+    width: min(100%, 280px);
   }
 }
 
@@ -236,6 +303,11 @@ h3 {
   .topbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .nav-group,
+  .contact-actions {
+    flex-wrap: wrap;
   }
 
   .nav-links {
