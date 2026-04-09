@@ -1,9 +1,13 @@
 :root {
-  --bg: #0b0d10;
-  --text: #f3f4f6;
-  --muted: #9ca3af;
-  --line: #232831;
-  --accent: #e5e7eb;
+  --bg: #050806;
+  --bg-alt: #0b130d;
+  --text: #eef6ef;
+  --muted: #94a398;
+  --line: #1a2a1d;
+  --accent: #78f0a1;
+  --accent-strong: #3ccf74;
+  --accent-soft: #b8ffd0;
+  --tone: #d6dee0;
 }
 
 * {
@@ -19,7 +23,9 @@ body {
   min-height: 100vh;
   font-family: "Manrope", sans-serif;
   color: var(--text);
-  background: linear-gradient(180deg, #090b0d 0%, #0f1318 100%);
+  background:
+    radial-gradient(circle at top right, rgba(60, 207, 116, 0.14), transparent 22%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
 }
 
 a {
@@ -69,6 +75,10 @@ a {
   font-size: 0.95rem;
 }
 
+.nav-links a:hover {
+  color: var(--accent-soft);
+}
+
 .hero-content {
   padding: 6rem 0 5rem;
 }
@@ -76,7 +86,7 @@ a {
 .eyebrow,
 .section-label,
 .focus-index {
-  color: var(--muted);
+  color: var(--accent);
 }
 
 h1,
@@ -140,13 +150,23 @@ h3 {
 .button-primary,
 .contact-link {
   background: var(--accent);
-  color: #0b0d10;
+  color: #041006;
+}
+
+.button-primary:hover,
+.contact-link:hover {
+  background: var(--accent-soft);
 }
 
 .button-secondary {
   border: 1px solid var(--line);
   background: transparent;
   color: var(--text);
+}
+
+.button-secondary:hover {
+  border-color: var(--accent-strong);
+  color: var(--accent-soft);
 }
 
 .content {
@@ -158,6 +178,10 @@ h3 {
 .section {
   padding: 3.5rem 0;
   border-top: 1px solid var(--line);
+}
+
+.hero {
+  border-top: 4px solid var(--accent-strong);
 }
 
 .section-heading {
@@ -180,10 +204,16 @@ h3 {
 
 .focus-item {
   padding: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
 }
 
 .focus-index {
   margin: 0 0 1rem;
+}
+
+.contact-section h2 {
+  color: var(--tone);
 }
 
 .contact-copy {
